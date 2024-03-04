@@ -17,7 +17,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5000/", // URL (required)
+        url: process.env.SERVER_URL,
       },
     ],
   },
