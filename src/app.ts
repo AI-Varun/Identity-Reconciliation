@@ -91,12 +91,12 @@ app.use(cors());
  *               $ref: '#/components/schemas/ContactResponse'
  */
 
-const isValidEmail = (email: string | any[]) => {
-  return email && email.length <= 255;
+const isValidEmail = (email: string | null) => {
+  return email === null || (email && email.length <= 255);
 };
 
-const isValidPhoneNumber = (phoneNumber: string | any[]) => {
-  return phoneNumber && phoneNumber.length <= 15;
+const isValidPhoneNumber = (phoneNumber: string | null) => {
+  return phoneNumber === null || (phoneNumber && phoneNumber.length <= 15);
 };
 
 app.post("/identify", async (req, res) => {
